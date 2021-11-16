@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
 in
 {
   imports = [
@@ -9,5 +9,22 @@ in
 
   home-manager.users.matthew = {
     /* Here goes your home-manager config, eg home.packages = [ pkgs.foo ]; */
-  }
+    home.packages = 
+      [ pkgs.vim
+	pkgs.git
+	pkgs.fish
+	pkgs.neofetch
+	pkgs.starship
+	pkgs.firefox
+	pkgs.gnome.gnome-tweaks ];
+
+      programs.git = {
+        enable = true;
+	userName = "mhwdvs";
+	userEmail = "matt@mhwdvs.com";
+      };
+  };
+
+  users.users.matthew.shell = pkgs.fish;
 }
+
