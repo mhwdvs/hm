@@ -17,6 +17,7 @@ in
 	pkgs.neofetch
 	pkgs.starship
 	pkgs.firefox
+	pkgs.syncthing
 	pkgs.gnome.gnome-tweaks ];
 
       programs.git = {
