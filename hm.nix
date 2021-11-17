@@ -11,6 +11,7 @@ in
     /* Here goes your home-manager config, eg home.packages = [ pkgs.foo ]; */
     home.packages = 
       [ pkgs.vim
+	pkgs.vscodium
 	pkgs.git
 	pkgs.clang_12
 	pkgs.fish
