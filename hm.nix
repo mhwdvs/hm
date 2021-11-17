@@ -18,6 +18,7 @@ in
 	pkgs.starship
 	pkgs.firefox
 	pkgs.syncthing
+	pkgs.libreoffice
 	pkgs.gnome.gnome-tweaks ];
 
       programs.git = {
