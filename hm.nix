@@ -12,6 +12,7 @@ in
     home.packages = 
       [ pkgs.vim
 	pkgs.git
+	pkgs.clang_12
 	pkgs.fish
 	pkgs.neofetch
 	pkgs.starship
