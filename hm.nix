@@ -16,6 +16,7 @@ in
 	pkgs.clang_12
     pkgs.cmake
 	pkgs.fish
+    pkgs.ripgrep-all
 	pkgs.neofetch
 	pkgs.starship
 	pkgs.firefox
