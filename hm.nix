@@ -14,6 +14,7 @@ in
 	pkgs.vscodium
 	pkgs.git
 	pkgs.clang_12
+    pkgs.cmake
 	pkgs.fish
 	pkgs.neofetch
 	pkgs.starship
