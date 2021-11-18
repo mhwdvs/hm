@@ -22,6 +22,7 @@ in
 	pkgs.firefox
 	pkgs.syncthing
 	pkgs.libreoffice
+    pkgs.okular
 	pkgs.gnome.gnome-tweaks ];
 
       programs.git = {
