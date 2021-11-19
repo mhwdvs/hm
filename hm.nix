@@ -15,6 +15,7 @@ in
 	pkgs.git
 	pkgs.clang_12
     pkgs.cmake
+	pkgs.ninja
 	pkgs.fish
     pkgs.ripgrep-all
 	pkgs.neofetch
