@@ -3,7 +3,7 @@ My nix/home-manager configuration
 
 ## What makes this special
 
-- NixOS rebuild script that is accessible system-wide - install and somewhat forget
+- ~~NixOS rebuild script that is accessible system-wide - install and somewhat forget~~
 
 ## Usage
 
