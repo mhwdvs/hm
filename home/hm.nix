@@ -37,7 +37,7 @@ in
 
     programs.fish = {
       enable = true;
-      interactiveShellInit = "set fish_greeting;";
+      interactiveShellInit = "set fish_greeting; neofetch;";
     };
 
     programs.starship = {
