@@ -10,7 +10,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home-manager.users.matthew = {
-    /* Here goes your home-manager config, eg home.packages = [ pkgs.foo ]; */
     home.packages = 
       [ pkgs.vim
 	      pkgs.vscodium
@@ -33,7 +32,17 @@ in
       credential.helper = "${
           pkgs.git.override { withLibsecret = true; }
         }/bin/git-credential-libsecret";
+      };
     };
+
+    programs.fish = {
+      enable = true;
+      interactiveShellInit = "set fish_greeting;";
+    };
+
+    programs.starship = {
+      enable = true;
+      enableFishIntegration = true;
     };
   };
 
