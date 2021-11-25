@@ -5,6 +5,9 @@ in
 {
   imports = [
     (import "${home-manager}/nixos")
+    ./git.nix
+    ./fish.nix
+    ./starship.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -20,27 +23,6 @@ in
 	      pkgs.libreoffice
         pkgs.okular
 	      pkgs.gnome.gnome-tweaks ];
-
-    programs.git = {
-      enable = true;
-      userName = "mhwdvs";
-      userEmail = "matt@mhwdvs.com";
-      extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
-      };
-    };
-
-    programs.fish = {
-      enable = true;
-      interactiveShellInit = "set fish_greeting; neofetch;";
-    };
-
-    programs.starship = {
-      enable = true;
-      enableFishIntegration = true;
-    };
   };
 
   # use fish shell
@@ -48,4 +30,3 @@ in
   users.users.matthew.shell = pkgs.fish;
   environment.shells = [ pkgs.fish ];
 }
-
