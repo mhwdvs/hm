@@ -18,7 +18,7 @@ My NixOS/home-manager configuration
 cd /home && # navigate to root home dir
 sudo nix-shell --run "git clone https://github.com/mhwdvs/hm" -p git && # clone home config
 sudo nixos-rebuild -I nixos-config="/home/hm/machines/<desired machine>.nix" switch && # build config
-passwd matthew # set password of new user
+sudo passwd matthew # set password of new user
 ```
 
 #### Rebuild
