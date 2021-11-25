@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, config, ... }:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
 in
@@ -13,11 +13,8 @@ in
     home.packages = 
       [ pkgs.vim
 	      pkgs.vscodium
-	      pkgs.git
-	      pkgs.fish
         pkgs.ripgrep-all
 	      pkgs.neofetch
-	      pkgs.starship
 	      pkgs.firefox
 	      pkgs.syncthing
 	      pkgs.libreoffice
@@ -47,6 +44,8 @@ in
   };
 
   # use fish shell
+  # i probably only need one of these O_o
   users.users.matthew.shell = pkgs.fish;
+  environment.shells = [ pkgs.fish ];
 }
 

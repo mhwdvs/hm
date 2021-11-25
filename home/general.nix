@@ -1,6 +1,3 @@
-{ config, pkgs, ... }:
-let   
-in
 {
   # Set your time zone.
   time.timeZone = "Australia/Perth";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, config, ... }:
 let 
   # shell script to use this config from other directories
   my-nixos-rebuild = pkgs.writeShellScriptBin "my-nixos-rebuild" ''
@@ -16,8 +16,8 @@ in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ../home/general.nix
     ../home/hm.nix
+    ../home/general.nix
   ];
 
   # install shell scripts
