@@ -1,9 +1,9 @@
 # hm
-My nix/home-manager configuration
+My NixOS/home-manager configuration
 
-## What makes this special
+## What's special
 
-- ~~NixOS rebuild script that is accessible system-wide - install and somewhat forget~~
+- Wrapped `nixos-rebuild` script (`my-nixos-rebuild`) that is automatically made accessible system-wide - install and somewhat forget
 
 ## Usage
 
@@ -12,9 +12,15 @@ My nix/home-manager configuration
 #### Install
 
 - Install NixOS
-- Build machine config
-    - `sudo nixos-rebuild -I nixos-config="machines/<desired machine config directory>/configuration.nix" switch`
-- Set password of user `matthew`
+- Bootstrap the config (should just work™);
+
+```bash
+su root && # ensure we are root
+cd ~ && # navigate to root home dir
+nix-shell --run "wget -c https://github.com/matthew/hm/archive/master.tar.gz && tar --strip-components=1 -xvf master.tar.gz" -p wget && # download home config
+nixos-rebuild -I nixos-config="/root/hm/machines/<desired machine>.nix" switch && # build config
+passwd matthew # set password of new user
+```
 
 #### Rebuild
 
