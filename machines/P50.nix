@@ -3,7 +3,7 @@ let
   # shell script to use this config from other directories
   my-nixos-rebuild = pkgs.writeShellScriptBin "my-nixos-rebuild" ''
     echo "Building P50 configuration"
-    sudo nixos-rebuild -I nixos-config="/root/hm/machines/P50.nix" switch
+    sudo nixos-rebuild -I nixos-config="/home/hm/machines/P50.nix" switch
   '';
 
   # shell script to offload an application to the DGPU
@@ -17,6 +17,7 @@ in
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../home/general.nix
+    ../home/hm.nix
   ];
 
   # install shell scripts

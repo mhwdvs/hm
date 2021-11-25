@@ -15,10 +15,9 @@ My NixOS/home-manager configuration
 - Bootstrap the config (should just work™);
 
 ```bash
-su root && # ensure we are root
-cd ~ && # navigate to root home dir
-nix-shell --run "wget -c https://github.com/matthew/hm/archive/master.tar.gz && tar --strip-components=1 -xvf master.tar.gz" -p wget && # download home config
-nixos-rebuild -I nixos-config="/root/hm/machines/<desired machine>.nix" switch && # build config
+cd /home && # navigate to root home dir
+sudo nix-shell --run "git clone https://github.com/mhwdvs/hm" -p git && # clone home config
+sudo nixos-rebuild -I nixos-config="/home/hm/machines/<desired machine>.nix" switch && # build config
 passwd matthew # set password of new user
 ```
 
