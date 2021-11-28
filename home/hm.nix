@@ -7,6 +7,7 @@ in
     (import "${home-manager}/nixos")
     ./git.nix
     ./fish.nix
+    ./doom-emacs.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -15,6 +16,7 @@ in
     home.packages = 
       [ pkgs.starship
         pkgs.vim
+        #pkgs.emacs
         pkgs.jetbrains.rider
         pkgs.vscodium
         pkgs.ripgrep-all
