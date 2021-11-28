@@ -16,14 +16,14 @@ in
     home.packages = 
       [ pkgs.vim
         pkgs.jetbrains.rider
-	      pkgs.vscodium
+        pkgs.vscodium
         pkgs.ripgrep-all
-	      pkgs.neofetch
-	      pkgs.firefox
-	      pkgs.syncthing
-	      pkgs.libreoffice
+        pkgs.neofetch
+        pkgs.firefox
+        pkgs.syncthing
+        pkgs.libreoffice
         pkgs.okular
-	      pkgs.gnome.gnome-tweaks ];
+        pkgs.gnome.gnome-tweaks ];
   };
 
   # use fish shell
