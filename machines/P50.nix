@@ -6,6 +6,11 @@ let
     sudo nixos-rebuild -I nixos-config="/home/hm/machines/P50.nix" switch
   '';
 
+  my-nixos-upgrade = pkgs.writeShellScriptBin "my-nixos-upgrade" ''
+    echo "Upgrading P50 configuration"
+    sudo nixos-rebuild -I nixos-config=/home/hm/machines/P50.nix switch --upgrade
+  '';
+
   # shell script to offload an application to the DGPU
   # Usage: nvidia-offload <3D-accelerated application>
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -24,6 +29,7 @@ in
   environment.systemPackages = [ 
     nvidia-offload 
     my-nixos-rebuild
+    my-nixos-upgrade
   ];
 
   # Use the systemd-boot EFI boot loader.

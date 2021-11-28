@@ -7,14 +7,14 @@ in
     (import "${home-manager}/nixos")
     ./git.nix
     ./fish.nix
-    ./starship.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   home-manager.users.matthew = {
     home.packages = 
-      [ pkgs.vim
+      [ pkgs.starship
+        pkgs.vim
         pkgs.jetbrains.rider
         pkgs.vscodium
         pkgs.ripgrep-all
