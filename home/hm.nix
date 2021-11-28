@@ -30,4 +30,12 @@ in
   # i probably only need one of these O_o
   users.users.matthew.shell = pkgs.fish;
   environment.shells = [ pkgs.fish ];
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+   };
+
 }
