@@ -15,6 +15,7 @@ in
   home-manager.users.matthew = {
     home.packages = 
       [ pkgs.vim
+        pkgs.jetbrains.rider
 	      pkgs.vscodium
         pkgs.ripgrep-all
 	      pkgs.neofetch
