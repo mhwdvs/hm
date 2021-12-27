@@ -9,4 +9,6 @@
         }/bin/git-credential-libsecret";
         };
     };
+
+    home-manager.users.matthew.home.packages = [ pkgs.git-crypt ];
 }

@@ -54,4 +54,11 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  powerManagement.cpuFreqGovernor = "powersave";
+
+  # validity VFS7500 fingerprint reader
+  services.fprintd.enable = true;
+  services.fprintd.tod.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 }

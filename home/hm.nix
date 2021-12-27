@@ -7,7 +7,10 @@ in
     (import "${home-manager}/nixos")
     ./git.nix
     ./fish.nix
-    ./doom-emacs.nix
+    #./doom-emacs.nix
+    ./diversus.nix
+    ./docker.nix
+    #./gpg.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -16,16 +19,17 @@ in
     home.packages = 
       [ pkgs.starship
         pkgs.vim
-        #pkgs.emacs
-        pkgs.jetbrains.rider
+        #pkgs.jetbrains.rider
         pkgs.vscodium
         pkgs.ripgrep-all
         pkgs.neofetch
         pkgs.firefox
         pkgs.syncthing
-        pkgs.libreoffice
+        #pkgs.libreoffice
         pkgs.okular
-        pkgs.gnome.gnome-tweaks ];
+        pkgs.gnome.gnome-tweaks
+        #pkgs.mono
+      ];
   };
 
   # use fish shell
