@@ -3,12 +3,12 @@ let
   # shell script to use this config from other directories
   my-nixos-rebuild = pkgs.writeShellScriptBin "my-nixos-rebuild" ''
     echo "Building P50 configuration"
-    sudo nixos-rebuild -I nixos-config="/home/hm/machines/P50.nix" switch
+    sudo nixos-rebuild switch --flake '/home/hm'
   '';
 
   my-nixos-upgrade = pkgs.writeShellScriptBin "my-nixos-upgrade" ''
     echo "Upgrading P50 configuration"
-    sudo nixos-rebuild -I nixos-config=/home/hm/machines/P50.nix switch --upgrade
+    sudo nixos-rebuild switch --flake '/home/hm' --upgrade
   '';
 
   # shell script to offload an application to the DGPU

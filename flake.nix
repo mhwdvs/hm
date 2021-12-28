@@ -10,11 +10,10 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
-    let # local variables
+  outputs = { self, nixpkgs }: {
+    nixosConfigurations.matthew = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-    in {
-      packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+      modules = [ ./machines/P50.nix ];
+    };
   };
 }
