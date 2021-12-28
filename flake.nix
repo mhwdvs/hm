@@ -2,12 +2,12 @@
   description = "System configuration";
   
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-21.05";
+    #nixpkgs.url = "nixpkgs/nixos-21.05";
     
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #home-manager = {
+    #  url = "github:nix-community/home-manager";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = { self, nixpkgs }: {
