@@ -10,7 +10,6 @@ in
     #./doom-emacs.nix
     ./diversus.nix
     ./docker.nix
-    #./gpg.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
