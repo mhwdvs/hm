@@ -21,5 +21,5 @@ let
   ];
 in
 {
-  home.packages = packages;
+  home-manager.users.matthew.home.packages = packages;
 }

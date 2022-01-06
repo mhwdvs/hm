@@ -9,11 +9,13 @@
     ./pkgs.nix
   ];
 
-  # use fish shell
-  # i probably only need one of these O_o
-  users.users.matthew.shell = pkgs.fish;
-  environment.shells = [ pkgs.fish ];
+  home-manager.users.matthew = { pkgs, ... }: {
+    # use fish shell
+    # i probably only need one of these O_o
+    #environment.shells = [ pkgs.fish ];
+    shell = pkgs.fish;
 
-  home.stateVersion = "21.05";
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
+    home.stateVersion = "21.05";
+  };
 }
