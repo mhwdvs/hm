@@ -1,4 +1,26 @@
-{ ... }: {
+{ pkgs, ... }: 
+let 
+  packages = with pkgs; [
+    # Tools
+    ## Terminal rice
+    starship
+    neofetch
+
+    ## Text editors
+    vim
+    vscodium
+
+    ## Utilities
+    firefox
+    ripgrep-all
+    syncthing
+    okular
+    
+    ## Gnome
+    gnome.gnome-tweaks
+  ];
+in
+{
   imports = [
     ./git.nix
     ./fish.nix
@@ -7,22 +29,7 @@
     ./docker.nix
   ];
 
-   home-manager.users.matthew = {
-    home.packages = 
-      [ pkgs.starship
-        pkgs.vim
-        #pkgs.jetbrains.rider
-        pkgs.vscodium
-        pkgs.ripgrep-all
-        pkgs.neofetch
-        pkgs.firefox
-        pkgs.syncthing
-        #pkgs.libreoffice
-        pkgs.okular
-        pkgs.gnome.gnome-tweaks
-        #pkgs.mono
-      ];
-  };
+  home.packages = packages;
 
   # use fish shell
   # i probably only need one of these O_o

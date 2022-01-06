@@ -21,8 +21,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../home/hm.nix
-    ../home/general.nix
+    ../../home
   ];
 
   # install shell scripts
