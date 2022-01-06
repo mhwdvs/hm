@@ -20,7 +20,7 @@ let
 in
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../home/hm.nix
     ../home/general.nix
   ];
