@@ -1,10 +1,5 @@
-{ pkgs, config, ... }:
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
-in
-{
+{ ... }: {
   imports = [
-    (import "${home-manager}/nixos")
     ./git.nix
     ./fish.nix
     #./doom-emacs.nix
@@ -12,9 +7,7 @@ in
     ./docker.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-  home-manager.users.matthew = {
+   home-manager.users.matthew = {
     home.packages = 
       [ pkgs.starship
         pkgs.vim
@@ -36,11 +29,6 @@ in
   users.users.matthew.shell = pkgs.fish;
   environment.shells = [ pkgs.fish ];
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-   };
-
+  home.stateVersion = "21.05";
+  programs.home-manager.enable = true;
 }

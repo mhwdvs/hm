@@ -1,4 +1,9 @@
-{
+{ pkgs, lib, system, ... }: {
+  imports = [
+    ./cachix.nix
+    ./user.nix
+  ];
+
   # Set your time zone.
   time.timeZone = "Australia/Perth";
 
@@ -18,7 +23,22 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "unstable"; # Did you read the comment?
 
-  system.autoUpgrade.enable = true;
+  nix = {
+    # Use flakes for **maximum hermeticism**.
+    package = pkgs.nix;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      # Uses more disk space but speeds up nix-direnv.
+      keep-derivations = true
+      keep-outputs = true
+    '';
+  };
+
+  # Setup `home-manager`.
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.opeik.imports = [ ../home ];
+  };
 
 }
-
