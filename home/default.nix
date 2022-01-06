@@ -1,25 +1,4 @@
-{ pkgs, ... }: 
-let 
-  packages = with pkgs; [
-    # Tools
-    ## Terminal rice
-    starship
-    neofetch
-
-    ## Text editors
-    vim
-    vscodium
-
-    ## Utilities
-    firefox
-    ripgrep-all
-    syncthing
-    okular
-    
-    ## Gnome
-    gnome.gnome-tweaks
-  ];
-in
+{ pkgs, ... }:
 {
   imports = [
     ./git.nix
@@ -27,9 +6,8 @@ in
     #./doom-emacs.nix
     ./diversus.nix
     ./docker.nix
+    ./pkgs.nix
   ];
-
-  home.packages = packages;
 
   # use fish shell
   # i probably only need one of these O_o
