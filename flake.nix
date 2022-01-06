@@ -45,8 +45,8 @@
     {
       # nixOS hosts.
       nixosConfigurations = {
-        # Work laptop, Dell Precision 7550 (2020).
-        nixos = nixosConfig {
+        # Lenovo P50 Pantone
+        P50 = nixosConfig {
           system = "x86_64-linux";
           modules = [ ./machines/P50 ];
         };

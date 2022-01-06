@@ -1,14 +1,14 @@
 { pkgs, config, ... }:
 let 
   # shell script to use this config from other directories
-  my-nixos-rebuild = pkgs.writeShellScriptBin "my-nixos-rebuild" ''
+  P50-nixos-rebuild = pkgs.writeShellScriptBin "P50-nixos-rebuild" ''
     echo "Building P50 configuration"
-    sudo nixos-rebuild switch --flake '/home/hm'
+    sudo nixos-rebuild switch --flake '/home/hm/.#P50'
   '';
 
-  my-nixos-upgrade = pkgs.writeShellScriptBin "my-nixos-upgrade" ''
+  P50-nixos-upgrade = pkgs.writeShellScriptBin "P50-nixos-upgrade" ''
     echo "Upgrading P50 configuration"
-    sudo nixos-rebuild switch --flake '/home/hm' --upgrade
+    sudo nixos-rebuild switch --flake '/home/hm/.#P50' --upgrade
   '';
 
   # shell script to offload an application to the DGPU
@@ -27,8 +27,8 @@ in
   # install shell scripts
   environment.systemPackages = [ 
     nvidia-offload 
-    my-nixos-rebuild
-    my-nixos-upgrade
+    P50-nixos-rebuild
+    P50-nixos-upgrade
   ];
 
   # Use the systemd-boot EFI boot loader.
