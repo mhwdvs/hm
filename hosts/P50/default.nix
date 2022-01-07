@@ -34,11 +34,15 @@ in
 
   # install shell scripts
   environment.systemPackages = [ 
+    # scripts
     P50-personal-nixos-rebuild
     P50-personal-nixos-upgrade
     P50-work-nixos-rebuild
     P50-work-nixos-upgrade
     nvidia-offload 
+
+    # GNOME
+    gnome.gnome-tweaks
   ];
 
   # Use the systemd-boot EFI boot loader.

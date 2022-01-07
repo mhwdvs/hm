@@ -7,7 +7,7 @@
     (lib.mkIf pkgs.stdenv.isLinux {
       home = "/home/matthew";
       isNormalUser = true;
-      extraGroups = [ "wheel" "dialout" "networkmanager" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" ];
     })
   ];
 }
