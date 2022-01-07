@@ -1,4 +1,9 @@
 { pkgs, lib, system, ... }: {
+  imports = [
+    ./cachix.nix
+    ./user.nix
+  ];
+
   nix = {
     # Use flakes for **maximum hermeticism**.
     package = pkgs.nix;
@@ -10,8 +15,20 @@
     '';
   };
 
+  # Allow proprietary packages.
+  nixpkgs.config.allowUnfree = true;
+  # System-wide packages.
+  environment.systemPackages = with pkgs; [ ];
+
   # Setup `home-manager`.
   home-manager = {
-    users.matthew.imports = [ ../home ];
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.opeik.imports = [ ../home ];
+  };
+
+  # Integrate with shells.
+  programs = {
+    fish.enable = true;
   };
 }
