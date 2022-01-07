@@ -5,8 +5,9 @@
       shell = pkgs.fish;
     }
     (lib.mkIf pkgs.stdenv.isLinux {
-      home = "/home/matthew";
       isNormalUser = true;
+      home = "/home/matthew";
+      description = "Matthew Davis";
       extraGroups = [ "wheel" "networkmanager" "docker" ];
     })
   ];
