@@ -53,7 +53,7 @@
         };
 
         # pure nix hosts
-        nix-personal = home-manager.lib.homeManagerConfiguration {
+        nix-personal = home.lib.homeManagerConfiguration {
           system = "x86_64-linux";
           stateVersion = homeManagerStateVersion;
           homeDirectory = "/home/matthew";
@@ -63,7 +63,7 @@
             nixpkgs = nixpkgsConfig;
           };
         };
-        nix-work = home-manager.lib.homeManagerConfiguration {
+        nix-work = home.lib.homeManagerConfiguration {
           system = "x86_64-linux";
           stateVersion = homeManagerStateVersion;
           homeDirectory = "/home/matthew";
