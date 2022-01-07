@@ -26,4 +26,4 @@ jobs:
         extraPullNames: nix-community
         authToken: ${{ secrets.CACHIX_TOKEN }}
 
-    - run: nix build .#nixosConfigurations.nix-personal.config.system.build.toplevel --print-build-logs
+    - run: nix build .#nixosConfigurations.nix-personal --print-build-logs
