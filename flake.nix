@@ -59,7 +59,6 @@
           username = "matthew";
           configuration = {
             imports = [ ./hosts/nix ./profiles/personal sharedModules ];
-            nixpkgs = nixpkgsConfig;
           };
         };
         nix-work = home.lib.homeManagerConfiguration {
@@ -68,7 +67,6 @@
           username = "matthew";
           configuration = {
             imports = [ ./hosts/nix ./profiles/work sharedModules ];
-            nixpkgs = nixpkgsConfig;
           };
         };
       };
