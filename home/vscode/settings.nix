@@ -43,7 +43,7 @@
       "terminal.integrated.cursorBlinking" = true;
 
       # Files
-      "files.autoSave" = "afterDelay";
+      "files.autoSave" = "off";
       "files.eol" = "\n";
       "files.exclude" = { };
       "files.insertFinalNewline" = true;
