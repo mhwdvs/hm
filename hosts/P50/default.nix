@@ -42,7 +42,7 @@ in
     nvidia-offload 
 
     # GNOME
-    gnome.gnome-tweaks
+    pkgs.gnome.gnome-tweaks
   ];
 
   # Use the systemd-boot EFI boot loader.
