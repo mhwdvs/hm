@@ -3,7 +3,6 @@
   programs.git = {
     enable = true;
     userName = "Matthew Davis";
-    userEmail = "matt@mhwdvs.com";
     ignores = [ "" ];
     extraConfig = {
       core = {
