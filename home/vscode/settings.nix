@@ -55,12 +55,6 @@
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
 
-      # Remote SSH
-      "remote.SSH.useLocalServer" = false;
-      "remote.SSH.remotePlatform" = {
-        "marisa.local" = "linux";
-      };
-
       # Telemetry
       "telemetry.telemetryLevel" = "off";
       "redhat.telemetry.enabled" = false;

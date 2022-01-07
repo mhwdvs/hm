@@ -63,12 +63,6 @@
         sha256 = "0hhlhx3xy7x31xx2v3srvk67immajs6dm9h0wi49ii1rwx61zxah";
       }
       {
-        name = "remote-ssh";
-        publisher = "ms-vscode-remote";
-        version = "0.66.1";
-        sha256 = "0qj2ihl74bk1fbixv0g1qzdvaxh4skqww22dyaf17rs6cjf19zps";
-      }
-      {
         name = "crates";
         publisher = "serayuzgur";
         version = "0.5.10";
@@ -91,12 +85,6 @@
         publisher = "usernamehw";
         version = "3.4.1";
         sha256 = "1mr8si7jglpjw8qzl4af1k7r68vz03fpal1dr8i0iy4ly26pz7bh";
-      }
-      {
-        name = "vim";
-        publisher = "vscodevim";
-        version = "1.21.10";
-        sha256 = "0c9m7mc2kmfzj3hkwq3d4hj43qha8a75q5r1rdf1xfx8wi5hhb1n";
       }
     ];
   };
