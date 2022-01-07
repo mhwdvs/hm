@@ -35,10 +35,6 @@
       nixosModules = [
         ./modules/nixos
         home.nixosModules.home-manager
-        vscode-server.nixosModules.system
-        {
-          home-manager.sharedModules = [ vscode-server.nixosModules.home ];
-        }
       ];
       # macOS specific modules.
       macosModules = [
