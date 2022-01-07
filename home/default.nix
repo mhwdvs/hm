@@ -6,6 +6,7 @@
     ./pkg.nix
     ./starship.nix
     ./vscode
+    ./gtk.nix
   ];
 
   home.stateVersion = "21.05";

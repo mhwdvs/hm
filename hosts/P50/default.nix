@@ -66,6 +66,8 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  #environment.gnome.excludePackages = with gnome; [ ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
