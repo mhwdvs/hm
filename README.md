@@ -18,7 +18,7 @@ My NixOS/home-manager configuration (with great inspiration taken from [Opeik's 
 - Bootstrap the config (should just work™);
     - Available profiles are:
         - `P50-personal`
-        - `P50-work`
+        - `P50-work` (will only be accessible if you can unlock `git-crypt`)
 
 ```bash
 # copy-paste the following once you understand what it's doing
@@ -30,7 +30,7 @@ cd /home &&
 sudo nix-shell --run "git clone https://github.com/mhwdvs/hm" -p git &&
 
 # build config
-sudo nixos-rebuild -I nixos-config="/home/hm/machines/<desired machine>.nix" switch --flake ./hm/.\#<your profile> &&
+sudo nixos-rebuild switch --flake './hm/.#<your profile>' &&
 
 # set password of new user
 sudo passwd matthew
