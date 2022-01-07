@@ -26,5 +26,8 @@ cd sudo chown -R matthew /home/hm
 
 - `my-nixos-rebuild`
 
+## Troubleshooting
 
+- GNOME touchpad gestures stopped working (typically three-finger up/down for dash)
 
+For some reason these only work on Wayland, so either just switch to Wayland:tm: or [install a GNOME extension to fix gestures in X11](https://extensions.gnome.org/extension/4033/x11-gestures/)
