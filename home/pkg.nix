@@ -15,13 +15,11 @@ let
     jq # JSON processor
     git-town # Git workflow helper
   ];
-  macosPackages = with pkgs; [ ];
   nixosPackages = with pkgs; [
     _1password-gui # Password manager
   ];
 in
 {
   home.packages = packages
-    ++ lib.optionals pkgs.stdenv.isDarwin macosPackages
     ++ lib.optionals pkgs.stdenv.isLinux nixosPackages;
 }

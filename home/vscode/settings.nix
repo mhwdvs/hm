@@ -47,7 +47,6 @@
       "files.eol" = "\n";
       "files.exclude" = {
         "**/.direnv" = true; # Direnv cache
-        "**/.DS_Store" = true; # macOS Finder metadata
         "**/.git" = true; # Git data
         "**/result" = true; # Rust build artifacts
         "**/target" = true; # Nix build artifacts

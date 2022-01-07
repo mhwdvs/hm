@@ -20,7 +20,7 @@
     cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { self, nix, nixos, macos, home, nur, cachix, ... }:
+  outputs = { self, nix, nixos, home, nur, cachix, ... }:
     let
       # Package overlays.
       overlays = { nixpkgs.overlays = [ nix.overlay nur.overlay ]; };
@@ -30,10 +30,6 @@
       nixosModules = [
         ./modules/nixos
         home.nixosModules.home-manager
-      ];
-      # macOS specific modules.
-      macosModules = [
-        ./modules/macos
       ];
 
       # Creates a nixOS system configuration.
