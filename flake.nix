@@ -53,11 +53,25 @@
         };
 
         # pure nix hosts
-        nix-personal = {
-          imports = [ ./hosts/nix ./profiles/personal ];
+        nix-personal = home-manager.lib.homeManagerConfiguration {
+          system = "x86_64-linux";
+          stateVersion = homeManagerStateVersion;
+          homeDirectory = "/home/matthew";
+          username = "matthew";
+          configuration = {
+            imports = [ ./hosts/nix ./profiles/personal sharedModules ];
+            nixpkgs = nixpkgsConfig;
+          };
         };
-        nix-work = {
-          imports = [ ./hosts/nix ./profiles/work ];
+        nix-work = home-manager.lib.homeManagerConfiguration {
+          system = "x86_64-linux";
+          stateVersion = homeManagerStateVersion;
+          homeDirectory = "/home/matthew";
+          username = "matthew";
+          configuration = {
+            imports = [ ./hosts/nix ./profiles/work sharedModules ];
+            nixpkgs = nixpkgsConfig;
+          };
         };
       };
     };
