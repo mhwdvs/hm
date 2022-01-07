@@ -37,7 +37,7 @@
         nixos.lib.nixosSystem {
           inherit system;
           modules = modules ++ nixosModules ++ sharedModules;
-        };
+        };        
     in
     {
       # nixOS hosts.
@@ -50,6 +50,16 @@
         P50-work = nixosConfig {
           system = "x86_64-linux";
           modules = [ ./hosts/P50 ./profiles/work ];
+        };
+
+        # pure nix hosts
+        nix-personal = nixConfig {
+          system = "x86_64-linux";
+          modules = [ ./hosts/nix ./profiles/personal ];
+        };
+        nix-work = nixConfig {
+          system = "x86_64-linux";
+          modules = [ ./hosts/nix ./profiles/work ];
         };
       };
     };
