@@ -11,6 +11,13 @@ let
 
     # Utilities
     htop # Interactive proccess viewer
+    ripgrep-all # In-text search
+    neofetch # System information
+    syncthing # File sync
+    libreoffice # Office productivity suite
+    okular # PDF viewer
+    ## Web-browsers
+    firefox
   ];
   nixosPackages = with pkgs; [];
 in
