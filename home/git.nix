@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   # Install `git`, the stupid content tracker.
   programs.git = {
     enable = true;
