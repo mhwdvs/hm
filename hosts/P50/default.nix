@@ -1,6 +1,6 @@
 # Lenovo P50 (4K PANTONE, 2016)
 # In BIOS enable "Hybrid Graphics"
-{ ... }:
+{ pkgs, ... }:
 let 
   # shell script to use this config from other directories
   P50-personal-nixos-rebuild = pkgs.writeShellScriptBin "P50-personal-nixos-rebuild" ''
@@ -68,7 +68,7 @@ in
   powerManagement.cpuFreqGovernor = "powersave";
 
   # validity VFS7500 fingerprint reader
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
+  #services.fprintd.enable = true;
+  #services.fprintd.tod.enable = true;
+  #services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 }
