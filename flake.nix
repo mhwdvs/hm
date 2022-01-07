@@ -1,5 +1,5 @@
 {
-  description = "opeik's nixOS and macOS configuration";
+  description = "System configuration";
 
   inputs = {
     # Nix package manager.
@@ -21,13 +21,11 @@
       url = github:nix-community/NUR;
       inputs.nixpkgs.follows = "nixos";
     };
-    # Fixes VSCode remote server on nixOS.
-    vscode-server.url = "github:yaxitech/vscode-server-fixup";
     # Nix cache configurator.
     cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { self, nix, nixos, macos, home, nur, vscode-server, cachix, ... }:
+  outputs = { self, nix, nixos, macos, home, nur, cachix, ... }:
     let
       # Package overlays.
       overlays = { nixpkgs.overlays = [ nix.overlay nur.overlay ]; };
