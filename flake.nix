@@ -53,11 +53,11 @@
         };
 
         # pure nix hosts
-        nix-personal = nixConfig {
+        nix-personal = nixosConfig {
           system = "x86_64-linux";
           modules = [ ./hosts/nix ./profiles/personal ];
         };
-        nix-work = nixConfig {
+        nix-work = nixosConfig {
           system = "x86_64-linux";
           modules = [ ./hosts/nix ./profiles/work ];
         };
