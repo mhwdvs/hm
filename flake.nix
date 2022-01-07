@@ -55,6 +55,7 @@
         # pure nix hosts
         nix-personal = home.lib.homeManagerConfiguration {
           system = "x86_64-linux";
+          stateVersion = "22.05";
           homeDirectory = "/home/matthew";
           username = "matthew";
           configuration = {
@@ -63,6 +64,7 @@
         };
         nix-work = home.lib.homeManagerConfiguration {
           system = "x86_64-linux";
+          stateVersion = "22.05";
           homeDirectory = "/home/matthew";
           username = "matthew";
           configuration = {
