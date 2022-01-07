@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    ./direnv.nix
     ./fish.nix
     ./font.nix
     ./git.nix
