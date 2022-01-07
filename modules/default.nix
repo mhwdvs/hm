@@ -12,7 +12,6 @@
 
   # Setup `home-manager`.
   home-manager = {
-    useUserPackages = true;
     users.matthew.imports = [ ../home ];
   };
 }

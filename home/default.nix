@@ -16,6 +16,6 @@
     shell = pkgs.fish;
 
     programs.home-manager.enable = true;
-    home.stateVersion = "21.05";
+    home.stateVersion = "unstable";
   };
 }

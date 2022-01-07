@@ -1,6 +1,6 @@
 { ... }: {
     imports = [
-        ./starship.nix
+        #./starship.nix
     ];
 
     programs.fish = {
@@ -10,5 +10,10 @@
           starship init fish | source;
           neofetch;
         '';
+    };
+
+    programs.starship = {
+        enable = true;
+        enableFishIntegration = true;
     };
 }
