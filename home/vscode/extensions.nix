@@ -21,18 +21,6 @@
         sha256 = "0mralimyzhyp4x9q98x3ck64ifbjqdp8cxcami7clvdvkmf8hxhf";
       }
       {
-        name = "gitlens";
-        publisher = "eamodio";
-        version = "11.7.0";
-        sha256 = "0apjjlfdwljqih394ggz2d8m599pyyjrb0b4cfcz83601b7hk3x6";
-      }
-      {
-        name = "shell-format";
-        publisher = "foxundermoon";
-        version = "7.2.2";
-        sha256 = "00wc0y2wpdjs2pbxm6wj9ghhfsvxyzhw1vjvrnn1jfyl4wh3krvi";
-      }
-      {
         name = "vscode-pull-request-github";
         publisher = "GitHub";
         version = "0.33.2021120110";

@@ -20,7 +20,7 @@
       "editor.autoClosingBrackets" = "always";
       "editor.cursorBlinking" = "smooth";
       "editor.cursorSmoothCaretAnimation" = true;
-      "editor.cursorStyle" = "block";
+      "editor.cursorStyle" = "line";
       "editor.fontFamily" = "'FiraCode Nerd Font', monospace";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;
@@ -45,12 +45,7 @@
       # Files
       "files.autoSave" = "afterDelay";
       "files.eol" = "\n";
-      "files.exclude" = {
-        "**/.direnv" = true; # Direnv cache
-        "**/.git" = true; # Git data
-        "**/result" = true; # Rust build artifacts
-        "**/target" = true; # Nix build artifacts
-      };
+      "files.exclude" = { };
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
@@ -70,8 +65,6 @@
       # Git
       "git.enableStatusBarSync" = false;
       "git-graph.showStatusBarItem" = false;
-      "gitlens.codeLens.enabled" = false; # Disables code block blame.
-      "gitlens.currentLine.enabled" = false; # Disables current line blame.
 
       # Languages
       ## Rust
