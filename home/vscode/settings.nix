@@ -79,9 +79,6 @@
       "gitlens.codeLens.enabled" = false; # Disables code block blame.
       "gitlens.currentLine.enabled" = false; # Disables current line blame.
 
-      # Vim
-      "vim.sneak" = true;
-
       # Languages
       ## Rust
       "crates.listPreReleases" = true;
