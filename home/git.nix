@@ -3,6 +3,7 @@
   programs.git = {
     enable = true;
     userName = "Matthew Davis";
+    userEmail = "matt@mhwdvs.com";
     ignores = [ "" ];
     extraConfig = {
       core = {
@@ -17,6 +18,10 @@
       push.default = "current";
       # Automatically stash unstaged changes then reapply after an action completes.
       rebase.autoStash = true;
+      # Remember git authentication credentials
+      credential.helper = "${
+            pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
     };
   };
 }
