@@ -1,5 +1,5 @@
 { ... }: {
   programs.git = {
-    userEmail = "s.stikic@fugro.com";
+    userEmail = "mdavis@diversus.com.au";
   };
 }

@@ -6,11 +6,6 @@
     nix.url = "github:nixos/nix/latest-release";
     # nixOS support.
     nixos.url = "github:nixos/nixpkgs/nixos-unstable";
-    # macOS support.
-    macos = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixos";
-    };
     # Manages user home directories declaratively.
     home = {
       url = "github:nix-community/home-manager";
@@ -47,35 +42,18 @@
           inherit system;
           modules = modules ++ nixosModules ++ sharedModules;
         };
-
-      # Creates a macOS system configuration.
-      macosConfig = { system, modules }:
-        macos.lib.darwinSystem {
-          inherit system;
-          modules = modules ++ macosModules ++ sharedModules;
-        };
     in
     {
       # nixOS hosts.
       nixosConfigurations = {
-        # Work laptop, Dell Precision 7550 (2020).
-        marisa = nixosConfig {
+        # Lenovo P50 (4K PANTONE, 2016).
+        P50-personal = nixosConfig {
           system = "x86_64-linux";
-          modules = [ ./hosts/marisa ./profiles/work ];
+          modules = [ ./hosts/P50 ./profiles/personal ];
         };
-      };
-
-      # macOS hosts.
-      darwinConfigurations = {
-        # Personal desktop, Mac mini M1 (2020).
-        reimu = macosConfig {
-          system = "aarch64-darwin";
-          modules = [ ./hosts/reimu ./profiles/personal ];
-        };
-        # Duplicate of `reimu` except x86_64 for CI use.
-        reimu-ci = macosConfig {
-          system = "x86_64-darwin";
-          modules = [ ./hosts/reimu ./profiles/personal ];
+        P50-work = nixosConfig {
+          system = "x86_64-linux";
+          modules = [ ./hosts/P50 ./profiles/work ];
         };
       };
     };
