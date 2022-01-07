@@ -51,26 +51,20 @@
           system = "x86_64-linux";
           modules = [ ./hosts/P50 ./profiles/work ];
         };
+      };
 
-        # pure nix hosts
-        nix-personal = home.lib.homeManagerConfiguration {
-          system = "x86_64-linux";
-          stateVersion = "22.05";
-          homeDirectory = "/home/matthew";
-          username = "matthew";
-          configuration = {
-            imports = [ ./hosts/nix ./profiles/personal sharedModules ];
-          };
-        };
-        nix-work = home.lib.homeManagerConfiguration {
-          system = "x86_64-linux";
-          stateVersion = "22.05";
-          homeDirectory = "/home/matthew";
-          username = "matthew";
-          configuration = {
-            imports = [ ./hosts/nix ./profiles/work sharedModules ];
-          };
-        };
+      # pure nix hosts
+      nix-personal = home.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
+        homeDirectory = "/home/matthew";
+        username = "matthew";
+        configuration.imports = [ ./hosts/nix ./profiles/personal sharedModules ];
+      };
+      nix-work = home.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
+        homeDirectory = "/home/matthew";
+        username = "matthew";
+        configuration.imports = [ ./hosts/nix ./profiles/work sharedModules ];
       };
     };
 }
