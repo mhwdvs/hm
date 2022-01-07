@@ -1,7 +1,7 @@
 # Lenovo P50 (4K PANTONE, 2016)
 # In BIOS enable "Hybrid Graphics"
 { pkgs, ... }:
-let 
+let
   # shell script to use this config from other directories
   P50-personal-nixos-rebuild = pkgs.writeShellScriptBin "P50-personal-nixos-rebuild" ''
     echo "Building P50-personal configuration"
@@ -33,16 +33,17 @@ in
   ];
 
   # install shell scripts
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     # scripts
     P50-personal-nixos-rebuild
     P50-personal-nixos-upgrade
     P50-work-nixos-rebuild
     P50-work-nixos-upgrade
-    nvidia-offload 
+    nvidia-offload
 
     # GNOME
     pkgs.gnome.gnome-tweaks
+    pkgs.gnomeExtensions.x11-gestures
   ];
 
   # Use the systemd-boot EFI boot loader.
