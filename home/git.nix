@@ -15,6 +15,8 @@
       init.defaultBranch = "main";
       # Use the same branch names on the local and remote end.
       push.default = "current";
+      # Always rebase instead of merge.
+      pull.rebase = true;
       # Automatically stash unstaged changes then reapply after an action completes.
       rebase.autoStash = true;
       # Remember git authentication credentials
