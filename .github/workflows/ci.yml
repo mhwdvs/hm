@@ -26,4 +26,4 @@ jobs:
           extraPullNames: nix-community
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
-      - run: nix --experimental-features "nix-command flakes" '.#nix-personal.activationPackage --print-build-logs'
+      - run: nix build '.#nix-personal.activationPackage --print-build-logs'
