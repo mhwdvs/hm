@@ -70,3 +70,17 @@ nix-env -iA nixpkgs.gitAndTools.gitFull
 mv ~/.config/nixpkgs ~/.config/nixpkgs-origin
 git clone https://github.com/kunxi/nix-config.git ~/.config/nixpkgs
 ```
+
+- Build the config
+
+```
+nixFlakes build '.#homeConfigurations."someuser@somecomputer".activationPackage'
+```
+
+- Activate the config
+
+```
+./build/activate
+```
+
+
