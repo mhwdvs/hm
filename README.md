@@ -46,3 +46,27 @@ cd sudo chown -R matthew /home/hm
 ### Nix (on non-NixOS host)
 
 TODO
+
+Thank you https://github.com/kunxi/nix-config/ and https://dee.underscore.world/blog/home-manager-flakes/ <3
+
+- Install `nix`
+
+```sh
+curl -L https://nixos.org/nix/install | sh source $HOME/.nix-profile/etc/profile.d/nix.sh
+```
+
+- Install `home-manager`
+
+```sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
+
+- Bootstrap `git` and this config
+
+```
+nix-env -iA nixpkgs.gitAndTools.gitFull
+mv ~/.config/nixpkgs ~/.config/nixpkgs-origin
+git clone https://github.com/kunxi/nix-config.git ~/.config/nixpkgs
+```
