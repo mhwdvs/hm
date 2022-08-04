@@ -10,6 +10,15 @@ My NixOS/home-manager configuration (with great inspiration taken from [Opeik's 
 
 ## Usage
 
+### Nix
+
+```
+NIXPKGS_ALLOW_UNFREE=1 nix build --show-trace .#general --extra-experimental-features nix-command --extra-experimental-features flakes --impure
+
+```
+
+- Where `general` is the desired configuration
+
 ### NixOS
 
 #### Install
@@ -83,4 +92,9 @@ nixFlakes build '.#homeConfigurations."someuser@somecomputer".activationPackage'
 ./build/activate
 ```
 
+## Navigation
+
+- `home` contains shared, general configuration to be used by all configurations
+- `hosts` contains shared configuration for specific hardware devices
+- `profiles` contains unique configuration for different use cases (eg. work, school)
 

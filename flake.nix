@@ -1,56 +1,31 @@
 {
-  description = "System configuration";
+  description = "Home-manager configuration with flakes";
 
   inputs = {
-    # Nix package manager.
-    nix.url = "github:nixos/nix/latest-release";
-    # nixOS support.
-    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Manages user home directories declaratively.
-    home = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixos";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "/nixpkgs";
     };
-    # Nix user repository.
-    nur = {
-      url = github:nix-community/NUR;
-      inputs.nixpkgs.follows = "nixos";
-    };
-    # Nix cache configurator.
-    cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
-  outputs = { self, nix, nixos, home, nur, cachix, ... }:
-    let
-      # Package overlays.
-      overlays = { nixpkgs.overlays = [ nix.overlay nur.overlay ]; };
-      # Shared modules.
-      sharedModules = [ ./modules overlays cachix.nixosModules.declarative-cachix ];
-      # nixOS specific modules.
-      nixosModules = [
-        ./modules/nixos
-        home.nixosModules.home-manager
-      ];
-
-      # Creates a nixOS system configuration.
-      nixosConfig = { system, modules }:
-        nixos.lib.nixosSystem {
-          inherit system;
-          modules = modules ++ nixosModules ++ sharedModules;
+  outputs = { nixpkgs, home-manager, ... }: {
+    general = 
+      let
+        cfg = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [ 
+            ./home
+            {
+              home = {
+                username = "matthew";
+		homeDirectory = "/home/matthew";
+		stateVersion = "22.11";
+              };
+            }
+          ];
         };
-    in
-    {
-      # nixOS hosts.
-      nixosConfigurations = {
-        # Lenovo P50 (4K PANTONE, 2016).
-        P50-personal = nixosConfig {
-          system = "x86_64-linux";
-          modules = [ ./hosts/P50 ./profiles/personal ];
-        };
-        P50-work = nixosConfig {
-          system = "x86_64-linux";
-          modules = [ ./hosts/P50 ./profiles/work ];
-        };
-      };
+      in cfg.activationPackage;
     };
 }
