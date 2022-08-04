@@ -15,6 +15,7 @@ My NixOS/home-manager configuration (with great inspiration taken from [Opeik's 
 ```
 NIXPKGS_ALLOW_UNFREE=1 nix build --show-trace .#general --extra-experimental-features nix-command --extra-experimental-features flakes --impure
 
+NIXPKGS_ALLOW_UNFREE=1 nix run --show-trace .#general --extra-experimental-features nix-command --extra-experimental-features flakes --impure
 ```
 
 - Where `general` is the desired configuration
